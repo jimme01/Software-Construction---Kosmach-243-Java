@@ -1,0 +1,20 @@
+sensor-01 ; Temp ; 12 ; 2024-03-01T10:00
+sensor-02;humidity;3;2024-03-01T10:01
+sensor-03;Temp;7;2024-03-01T10:02
+sensor-01;pressure;1013;2024-03-01T10:03
+;temp;5;2024-03-01T10:04
+sensor-04;Humidity;45;2024-03-01T10:05
+sensor-02;temp;багато;2024-03-01T10:06
+sensor-05 ; PRESSURE ; 1008 ; 2024-03-01T10:07
+sensor-03;humidity;4;2024-03-01T10:08
+sensor-01;temp;20;2024-03-01T10:09
+sensor-06;temp;9
+sensor-04;temp;-3;2024-03-01T10:11
+sensor-02;humidity;38;2024-03-01T10:12
+sensor-07;pressure;;2024-03-01T10:13
+sensor-05;Temp;15;2024-03-01T10:14
+sensor-03;humidity;41;2024-03-01T10:15
+sensor-01;pressure;1011;2024-03-01T10:16
+sensor-08;temp;6;2024-03-01T10:17;extra
+sensor-06;humidity;5;2024-03-01T10:18
+sensor-02;temp;2;2024-03-01T10:19
