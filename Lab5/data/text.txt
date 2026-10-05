@@ -1,0 +1,4 @@
+Java is a language. Java is fast, and Java is popular.
+Streams make Java code short; streams are lazy.
+A map stores pairs: a key and a value. A map is not a list.
+The language is old, but the language is still modern.
