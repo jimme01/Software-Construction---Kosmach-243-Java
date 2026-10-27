@@ -1,0 +1,4 @@
+out/
+*.class
+output/
+scholarship_registry.csv
