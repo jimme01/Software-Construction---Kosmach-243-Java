@@ -1,16 +1,22 @@
 package notifications;
 
-public class NotificationsDemo {
-    public static void run() {
-        System.out.println("--- Task 5: DIP (Notifications) ---");
-        
-        // Composition Root: ми самі обираємо, яку реалізацію підставити
-        NotificationService prodService = new NotificationService(new EmailChannel());
-        NotificationService smsService = new NotificationService(new SmsChannel());
-        NotificationService testService = new NotificationService(new MockChannel());
+import common.Check;
 
-        prodService.notifyUser("Welcome to production!");
-        smsService.notifyUser("Your code is 1234");
-        testService.notifyUser("Testing 1, 2, 3...");
+public final class NotificationsDemo {
+    public static void run() {
+        System.out.println("=== Завдання 5. DIP (Сповіщення) ===");
+        
+        System.out.println("-- Refactored: Production --");
+        NotificationService prod = new NotificationService(new EmailChannel());
+        prod.notifyUser("Welcome to production!");
+
+        System.out.println("-- Refactored: Mock test --");
+        MockChannel mock = new MockChannel();
+        NotificationService test = new NotificationService(mock);
+        test.notifyUser("Testing...");
+        
+        Check.that("Mock канал отримав 1 повідомлення", mock.sentCount == 1);
+        Check.that("null-залежність -> NPE", Check.errorOf(() -> new NotificationService(null)).startsWith("NullPointerException"));
+        Check.that("Порожнє повідомлення -> Exception", Check.errorOf(() -> prod.notifyUser("")).startsWith("IllegalArgumentException"));
     }
 }

@@ -1,8 +1,9 @@
 package notifications;
 
 public class MockChannel implements NotificationChannel {
+    public int sentCount = 0;
     @Override
     public void send(String message) {
-        System.out.println("[MOCK] Caught message: " + message);
+        sentCount++;
     }
 }

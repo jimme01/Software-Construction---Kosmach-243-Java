@@ -1,11 +1,17 @@
 package geometry;
 
-public class Rectangle implements Shape {
-    protected double width, height;
-    public Rectangle(double width, double height) { this.width = width; this.height = height; }
-    public void setWidth(double width) { this.width = width; }
-    public void setHeight(double height) { this.height = height; }
-    
+public final class Rectangle implements Shape {
+    private final double width;
+    private final double height;
+
+    public Rectangle(double width, double height) {
+        this.width = Guard.positiveFinite(width, "width");
+        this.height = Guard.positiveFinite(height, "height");
+    }
+
+    public Rectangle withWidth(double newWidth) { return new Rectangle(newWidth, height); }
+    public Rectangle withHeight(double newHeight) { return new Rectangle(width, newHeight); }
+
     @Override
-    public double getArea() { return width * height; }
+    public double area() { return width * height; }
 }
