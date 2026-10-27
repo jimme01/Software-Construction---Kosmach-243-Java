@@ -1,7 +1,9 @@
 import common.Check;
 import grades.GradesDemo;
 import notifications.NotificationsDemo;
+import payments.PaymentsDemo;
 import printing.PrintingDemo;
+import shapes.ShapesDemo;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,6 +12,10 @@ public class Main {
         NotificationsDemo.run();
         System.out.println();
         PrintingDemo.run();
+        System.out.println();
+        ShapesDemo.run();
+        System.out.println();
+        PaymentsDemo.run();
         System.out.println();
 
         if (Check.failures() == 0) {
